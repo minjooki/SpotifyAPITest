@@ -1,25 +1,23 @@
 //
-//  TrackStruct.swift
+//  PlaylistStruct.swift
 //  ChordableSpotifyAPITest
 //
 //  Created by Minjoo Kim on 10/17/23.
 //
 
-import SpotifyWebAPI
 import Foundation
+import SpotifyWebAPI
 
-struct TrackStruct: Decodable {
+struct Playlist: Decodable {
   let name: String
-  let album: String
-  let artist: [Artist]
-  let duration: Int
+  let items: [PlaylistItem]
+  let images: [Image]
   let uri: String
   
   enum CodingKeys : String, CodingKey {
     case name
-    case album
-    case artist
-    case duration = "duration_ms"
+    case items = "tracks"
+    case images
     case uri
   }
 }

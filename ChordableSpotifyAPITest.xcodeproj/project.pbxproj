@@ -18,6 +18,9 @@
 		4191FE0B2ADEAA5100A8142B /* PlaylistStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191FE0A2ADEAA5100A8142B /* PlaylistStruct.swift */; };
 		4191FE0D2ADEAAAB00A8142B /* TrackStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191FE0C2ADEAAAB00A8142B /* TrackStruct.swift */; };
 		4191FE0F2ADEAEB300A8142B /* ImageStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4191FE0E2ADEAEB300A8142B /* ImageStruct.swift */; };
+		41A231DD2AE7FF040073EE51 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A231DC2AE7FF040073EE51 /* UserStruct.swift */; };
+		41A231DF2AE7FF6F0073EE51 /* ChordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A231DE2AE7FF6F0073EE51 /* ChordStruct.swift */; };
+		41A231E32AE80FA30073EE51 /* SongStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A231E22AE80FA30073EE51 /* SongStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		4191FE0A2ADEAA5100A8142B /* PlaylistStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistStruct.swift; sourceTree = "<group>"; };
 		4191FE0C2ADEAAAB00A8142B /* TrackStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackStruct.swift; sourceTree = "<group>"; };
 		4191FE0E2ADEAEB300A8142B /* ImageStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStruct.swift; sourceTree = "<group>"; };
+		41A231DC2AE7FF040073EE51 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
+		41A231DE2AE7FF6F0073EE51 /* ChordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordStruct.swift; sourceTree = "<group>"; };
+		41A231E22AE80FA30073EE51 /* SongStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,12 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417E2A562AE9C54C0091A13C /* Structs (old) */ = {
+			isa = PBXGroup;
+			children = (
+				4191FE0E2ADEAEB300A8142B /* ImageStruct.swift */,
+				4191FE0C2ADEAAAB00A8142B /* TrackStruct.swift */,
+				41A231E22AE80FA30073EE51 /* SongStruct.swift */,
+				41A231DC2AE7FF040073EE51 /* UserStruct.swift */,
+				41A231DE2AE7FF6F0073EE51 /* ChordStruct.swift */,
+				4191FE0A2ADEAA5100A8142B /* PlaylistStruct.swift */,
+			);
+			path = "Structs (old)";
+			sourceTree = "<group>";
+		};
 		4191FDE32ADEA44F00A8142B = {
 			isa = PBXGroup;
 			children = (
-				4191FE0A2ADEAA5100A8142B /* PlaylistStruct.swift */,
-				4191FE0E2ADEAEB300A8142B /* ImageStruct.swift */,
-				4191FE0C2ADEAAAB00A8142B /* TrackStruct.swift */,
+				417E2A562AE9C54C0091A13C /* Structs (old) */,
 				4191FE092ADEA73E00A8142B /* SpotifyAPI.playground */,
 				4191FDEE2ADEA45000A8142B /* ChordableSpotifyAPITest */,
 				4191FDED2ADEA45000A8142B /* Products */,
@@ -122,7 +139,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4191FDEB2ADEA45000A8142B = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -168,12 +185,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4191FE0D2ADEAAAB00A8142B /* TrackStruct.swift in Sources */,
+				41A231E32AE80FA30073EE51 /* SongStruct.swift in Sources */,
 				4191FE0F2ADEAEB300A8142B /* ImageStruct.swift in Sources */,
 				4191FE0B2ADEAA5100A8142B /* PlaylistStruct.swift in Sources */,
+				41A231DF2AE7FF6F0073EE51 /* ChordStruct.swift in Sources */,
 				4191FDFC2ADEA45200A8142B /* ChordableSpotifyAPITest.xcdatamodeld in Sources */,
 				4191FDF92ADEA45200A8142B /* Persistence.swift in Sources */,
 				4191FDF22ADEA45000A8142B /* ContentView.swift in Sources */,
 				4191FDF02ADEA45000A8142B /* main.swift in Sources */,
+				41A231DD2AE7FF040073EE51 /* UserStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +236,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -276,6 +297,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -8,7 +8,7 @@
 import Foundation
 import SpotifyWebAPI
 
-struct ImageStruct: Decodable {
+struct Image: Decodable {
   let url: String
   let height: Int
   let width: Int

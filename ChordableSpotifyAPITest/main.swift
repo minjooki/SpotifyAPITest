@@ -11,28 +11,6 @@ import SpotifyWebAPI
 // "CLIENT_SECRET" environment variables, respectively. --> changed to hardcoded for playground
 // Throws a fatal error if either can't be found.
 
-func getSpotifyCredentials() -> (clientId: String, clientSecret: String) {
-    let clientId = "b8ed1171504e4a8296abfff76f5d7995"
-    let clientSecret = "c7a9a1550d9045dbba33bd89a4a71692"
-    return (clientId: clientId, clientSecret: clientSecret)
-}
-
-//var authorizationState = String.randomURLSafe(length: 128)
-//var currentUser: SpotifyUser? = nil
-
-
-
-// Retrieve the client id and client secret from the environment variables.
-//let spotifyCredentials = getSpotifyCredentials()
-
-//let spotifyAPI = SpotifyAPI(
-//    authorizationManager: ClientCredentialsFlowManager(
-//        clientId: spotifyCredentials.clientId,
-//        clientSecret: spotifyCredentials.clientSecret
-////        scopes:
-//    )
-//)
-
 let spotifyAPI = SpotifyAPI(
     authorizationManager: AuthorizationCodeFlowManager(
         clientId: "b8ed1171504e4a8296abfff76f5d7995", clientSecret: "c7a9a1550d9045dbba33bd89a4a71692"
@@ -77,9 +55,6 @@ spotifyAPI.authorizationManager.requestAccessAndRefreshTokens(
 .store(in: &cancellables)
 
 // Authorize the application
-//try spotifyAPI.authorizationManager.authorize()
-
-
 
 
 // MARK: - The Application is Now Authorized -
@@ -139,20 +114,17 @@ dispatchGroup.wait()
 let playlistURI = "spotify:playlist:37i9dQZF1DX6R7QUWePReA?si=6d655c15bafd45cb"
 
 dispatchGroup.enter()
-spotifyAPI.playlistTracks(playlistURI, limit: 100, offset: 0, market: "US")
+spotifyAPI.playlist(playlistURI, market: "US")
   .sink(
     receiveCompletion: { completion in
       print("completion:", completion, terminator: "\n\n\n")
       dispatchGroup.leave()
     },
-    receiveValue: { playlistTrack in
+    receiveValue: { playlist in
       print("\nReceived Playlist")
       print("----------- ")
-      print("\nArray of just the tracks")
-      let tracks: [Track] = playlistTrack.items.compactMap(\.item)
-      
-      print("\nPrinting each track")
-      for track in tracks {
+      print(playlist.name)
+      for track in playlist.items.items.compactMap(\.item) {
         print(track.name)
       }
     }
@@ -181,4 +153,3 @@ spotifyAPI.playlistImage(playlistImgURI)
   )
   .store(in: &cancellables)
 dispatchGroup.wait()
-
